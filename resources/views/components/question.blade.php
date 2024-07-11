@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-y-12 items-stretch justify-center mx-auto">
+<div class="flex flex-col gap-y-12 items-center justify-center mx-auto">
     <div class="flex max-md:flex-col items-center gap-4">
         @if ($question->icon)
             <img src="{{ $question->icon_link }}" alt="icon" class="aspect-square w-24">
@@ -12,38 +12,35 @@
     </div>
     <span>
         <ul @class([
-    'grid sm:grid-cols-3 justify-stretch gap-4',
-    "md:grid-cols-{$question->options_count}" => $question->options_count <= 5,
-])>
+            'grid sm:grid-cols-3 justify-stretch gap-4',
+            "md:grid-cols-{$question->options_count}" => $question->options_count <= 5,
+        ])>
             @foreach ($question->options as $questionOption)
-                        @php
-                            $type = $question->answer_type == 'single' ? 'radio' : 'checkbox';
-                            $inputName = $question->answer_type == 'single' ? $question->label : "{$question->label}[]";
-                            // dd($question->answer_type);
-                            $isChecked =
-                                $question->answer_type == 'single'
-                                ? session($question->label) == $questionOption->label
-                                : in_array($questionOption->label, Request::session()->get($question->label, []));
-                        @endphp
-                        <li>
-                            <input type="{{ $type }}" name="{{ $inputName }}" id="{{ $loop->iteration }}"
-                                value="{{ $questionOption->label }}" class="hidden peer" @checked($isChecked)>
-                            <label for="{{ $loop->iteration }}"
-                                class="inline-flex cursor-pointer w-full h-full p-4 bg-white text-gray-600 border-2 border-white rounded-xl hover:border-light-coral peer-checked:bg-light-coral peer-checked:text-white">
-                                <div @class([
-                    'flex flex-col justify-stretch gap-y-4 flex-1',
-                    'items-center' => !$questionOption->description,
-                ])>
-                                    @if ($questionOption->icon)
-                                        <img src="{{ $questionOption->icon_link }}" alt="icon" class="aspect-square w-20">
-                                    @endif
-                                    <p class="font-semibold">{{ $questionOption->label }}</p>
-                                    @if ($questionOption->description)
-                                        <p>{{ $questionOption->description }}</p>
-                                    @endif
-                                </div>
-                            </label>
-                        </li>
+                @php
+                    $type = $question->answer_type == 'single' ? 'radio' : 'checkbox';
+                    // $inputName = $question->answer_type == 'single' ? $question->label : "{$question->label}[]";
+                    // dd($question->answer_type);
+                    $isChecked = in_array($questionOption->label, Request::session()->get($question->label, []));
+                @endphp
+                <li>
+                    <input type="{{ $type }}" name="{{ $question->label }}[]" id="{{ $loop->iteration }}"
+                        value="{{ $questionOption->label }}" class="hidden peer" @checked($isChecked)>
+                    <label for="{{ $loop->iteration }}"
+                        class="inline-flex cursor-pointer w-full h-full p-4 bg-white text-gray-600 border-2 border-white rounded-xl hover:border-light-coral peer-checked:bg-light-coral peer-checked:text-white">
+                        <div @class([
+                            'flex flex-col justify-stretch gap-y-4 flex-1',
+                            'items-center' => !$questionOption->description,
+                        ])>
+                            @if ($questionOption->icon)
+                                <img src="{{ $questionOption->icon_link }}" alt="icon" class="aspect-square w-20">
+                            @endif
+                            <p class="font-semibold">{{ $questionOption->label }}</p>
+                            @if ($questionOption->description)
+                                <p>{{ $questionOption->description }}</p>
+                            @endif
+                        </div>
+                    </label>
+                </li>
             @endforeach
         </ul>
         @error($question->label)

@@ -64,7 +64,7 @@ class progress extends Component
 
             return $category;
         })
-            ->filter(fn($category) => $category['question_count'] > 0)
+            ->filter(fn ($category) => $category['question_count'] > 0)
             ->toArray();
     }
 
@@ -73,7 +73,6 @@ class progress extends Component
      */
     public function render(): View|Closure|string
     {
-        dd("wot");
         return view('components.progress', ['group' => $this->group, 'step' => $this->step]);
     }
 }

@@ -66,8 +66,8 @@ class QuestionController extends Controller
                     'name' => $request->session()->get('name'),
                     'age' => $request->session()->get('age'),
                     'gender' => $request->session()->get('gender'),
-                    'skin_condition' => $request->session()->get('skin_condition'),
-                    'skin_dream' => json_encode($request->session()->get('skin_dream')),
+                    'skin_condition' => json_encode($request->session()->get('skin_condition', [])),
+                    'skin_dream' => json_encode($request->session()->get('skin_dream', [])),
                 ];
 
                 $answer = Answer::create($body);
@@ -118,9 +118,12 @@ class QuestionController extends Controller
             return redirect('/');
         }
 
-        $category = Category::where('name', $answer['skin_condition'])->first();
-        $dosDonts = DosDonts::where('skin_condition', $answer['skin_condition'])
-            ->whereIn('skin_dream', json_decode($answer['skin_dream']))
+        $skin_condition = json_decode($answer['skin_condition']);
+        $skin_dream = json_decode($answer['skin_dream']);
+
+        $category = Category::whereIn('name', $skin_condition)->first();
+        $dosDonts = DosDonts::where('skin_condition', $skin_condition)
+            ->whereIn('skin_dream', $skin_dream)
             ->get();
 
         return view('question.result', compact('category', 'dosDonts'));
