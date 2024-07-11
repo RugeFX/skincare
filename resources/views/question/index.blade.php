@@ -104,6 +104,13 @@
             // Reset Button
             $('#resetButton').click(() => $('#resetForm').submit())
 
+            // Name input
+            $('#name').on('input', function() {
+                let text = $(this).val();
+                text = text.replace(/\d+/g, '');
+                $(this).val(text);
+            })
+
             // Age input
             $('#age').on('input', function() {
                 const max = parseInt($(this).attr('max'));

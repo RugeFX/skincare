@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-y-12 items-center justify-center mx-auto">
-    <div class="flex max-md:flex-col items-center gap-4">
+    <div class="flex max-md:flex-col items-center gap-4 text-center">
         @if ($question->icon)
             <img src="{{ $question->icon_link }}" alt="icon" class="aspect-square w-24">
         @endif
@@ -47,7 +47,7 @@
             <div class="text-sm text-red-500 mt-2 text-center">{{ $message }}</div>
         @enderror
     </span>
-    <input type="hidden" name="label" value="{{ $question->label }}" class="hidden">
+    <input type="hidden" name="question_label" value="{{ $question->label }}" class="hidden">
     <span class="hidden md:grid-cols-3"></span>
     <span class="hidden md:grid-cols-4"></span>
     <span class="hidden md:grid-cols-5"></span>

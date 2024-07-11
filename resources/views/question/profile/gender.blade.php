@@ -3,7 +3,8 @@
     <span>
         <div class="grid grid-cols-1 md:grid-cols-3 items-stretch justify-stretch gap-4">
             <div class="text-center">
-                <input type="radio" name="gender" id="gender-L" value="Pria" class="hidden peer">
+                <input type="radio" name="gender" id="gender-L" value="Pria" class="hidden peer"
+                    @checked(session('gender') == 'Pria')>
                 <label for="gender-L"
                     class="inline-flex cursor-pointer w-full h-full p-4 bg-white text-gray-600 border-2 border-white rounded-xl hover:border-light-coral peer-checked:bg-light-coral peer-checked:text-white">
                     <div class="flex flex-col justify-stretch gap-y-4 flex-1 items-center">
@@ -13,7 +14,8 @@
                 </label>
             </div>
             <div class="text-center">
-                <input type="radio" name="gender" id="gender-P" value="Wanita" class="hidden peer">
+                <input type="radio" name="gender" id="gender-P" value="Wanita" class="hidden peer"
+                    @checked(session('gender') == 'Wanita')>
                 <label for="gender-P"
                     class="inline-flex cursor-pointer w-full h-full p-4 bg-white text-gray-600 border-2 border-white rounded-xl hover:border-light-coral peer-checked:bg-light-coral peer-checked:text-white">
                     <div class="flex flex-col justify-stretch items-center gap-y-4 flex-1">
@@ -23,7 +25,8 @@
                 </label>
             </div>
             <div class="text-center">
-                <input type="radio" name="gender" id="gender-S" value="Secret" class="hidden peer">
+                <input type="radio" name="gender" id="gender-S" value="Secret" class="hidden peer"
+                    @checked(session('gender') == 'Secret')>
                 <label for="gender-S"
                     class="inline-flex cursor-pointer w-full h-full p-4 bg-white text-gray-600 border-2 border-white rounded-xl hover:border-light-coral peer-checked:bg-light-coral peer-checked:text-white">
                     <div class="flex flex-col justify-stretch items-center gap-y-4 flex-1">
