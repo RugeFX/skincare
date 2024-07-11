@@ -85,14 +85,15 @@ class QuestionOptionController extends Controller
         ]);
 
         if ($request->hasFile('icon')) {
+            if ($question->icon) {
+                Storage::disk('public')->delete($question->icon);
+            }
+
             $validated['icon'] = $request->file('icon')->store('icon/question', 'public');
         }
 
         $question->update($validated);
 
-        if ($request->hasFile('icon') && $question->icon) {
-            Storage::disk('public')->delete($question->icon);
-        }
 
         return redirect()->back()->with('success', "Berhasil mengubah data pertanyaan");
     }
