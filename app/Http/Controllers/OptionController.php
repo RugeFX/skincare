@@ -78,15 +78,13 @@ class OptionController extends Controller
         $validated['question_id'] = $question;
 
         if ($request->hasFile('icon')) {
+            if ($option->icon) {
+                Storage::disk('public')->delete($option->icon);
+            }
             $validated['icon'] = $request->file('icon')->store('icon/option', 'public');
         }
 
-        $update = $option->update($validated);
-
-        if ($update && $option->icon) {
-            Storage::disk('public')->delete($option->icon);
-        }
-
+        $option->update($validated);
 
         return redirect()->back()->with('success', 'Berhasil mengubah data option');
     }
