@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply font-lato;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply font-medium text-xl py-4 px-40;
+    }
+
+    .card {
+        @apply bg-white rounded-xl h-full w-full p-8;
+    }
+
+    .card-title {
+        @apply text-red-400 text-lg font-semibold mb-2;
+    }
+
+    .step-item {
+        @apply relative flex flex-col gap-y-4 items-center justify-center flex-1;
+    }
+    .step-item:not(:last-child)::before {
+        @apply absolute content-[''] bg-melon w-full h-1 left-2/4 top-1/3 -translate-y-2/4 z-0;
+    }
+
+    .number {
+        @apply font-medium text-xl aspect-square rounded-full bg-melon text-light-coral text-center p-4 z-10;
+    }
+
+    .active .number {
+        @apply bg-red-400 text-white;
+    }
+
+    .complete .number {
+        @apply bg-emerald text-white;
+    }
+    .complete.step-item:not(:last-child)::before {
+        @apply bg-emerald;
+    }
+}
