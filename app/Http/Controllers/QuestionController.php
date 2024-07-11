@@ -72,30 +72,20 @@ class QuestionController extends Controller
 
                 $answer = Answer::create($body);
 
-                $request->session()->forget(['step', 'name', 'age', 'gender', 'skin_condition', 'skin_dream']);
+                $request->session()->flush();
                 $request->session()->put('answer', [
                     'skin_condition' => $answer->skin_condition,
                     'skin_dream' => $answer->skin_dream,
                 ]);
                 return redirect()->route('result');
-                // return redirect()->back();
                 break;
 
             default:
-                if ($request->label == 'skin_condition') {
-                    if ($request->has('skin_condition')) {
-                        $request->session()->put('skin_condition', $request->input('skin_condition'));
-                    } else {
-                        $request->validate(['skin_condition' => 'required']);
-                    }
-                }
-
-                if ($request->label == 'skin_dream') {
-                    if ($request->has('skin_dream')) {
-                        $request->session()->put('skin_dream', $request->input('skin_dream'));
-                    } else {
-                        $request->validate(['skin_dream' => 'required']);
-                    }
+                $questionLabel = $request->input('question_label');
+                if ($request->has($questionLabel)) {
+                    $request->session()->put($questionLabel, $request->input($questionLabel));
+                } else {
+                    $request->validate([$questionLabel => 'required']);
                 }
 
                 $request->session()->increment('step');
