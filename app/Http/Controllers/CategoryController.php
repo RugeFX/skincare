@@ -33,7 +33,7 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'tipe' => 'required',
-            'penyebab' => 'required',
+            'penyebab' => 'nullable',
             'karakteristik' => 'required',
             'skincare' => 'required',
         ]);
@@ -74,7 +74,7 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'tipe' => 'required',
-            'penyebab' => 'required',
+            'penyebab' => 'nullable',
             'karakteristik' => 'required',
             'skincare' => 'required',
         ]);
