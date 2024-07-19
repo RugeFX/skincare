@@ -6,7 +6,19 @@
 
 @layer base {
     html {
-        @apply font-lato;
+        @apply font-lato scroll-smooth scroll-mt-8;
+    }
+
+    article img {
+        @apply inline-block;
+    }
+
+    article ul {
+        @apply list-disc list-inside;
+    }
+
+    article ol {
+        @apply list-decimal list-inside;
     }
 }
 

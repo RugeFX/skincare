@@ -16,8 +16,8 @@
                             <th>Pertanyaan</th>
                             <th>Group</th>
                             <th>Tipe</th>
-                            <th>Options</th>
-                            <th width="250">Actions</th>
+                            <th>Pilihan</th>
+                            <th width="250">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label for="add.icon" class="form-label">Icon <span style="font-size: 8pt">(optional)</span></label>
+                        <label for="add.icon" class="form-label">Ikon <span style="font-size: 8pt">(optional)</span></label>
                         <input type="file" name="icon" id="add.icon" class="form-control">
                     </div>
                     <div class="mb-4">
@@ -83,7 +83,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="add.description" class="form-label">Description <span
+                        <label for="add.description" class="form-label">Deskripsi <span
                                 style="font-size: 8pt">(optional)</span></label>
                         <input type="text" name="description" id="add.description" class="form-control">
                     </div>
@@ -95,7 +95,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="add.order" class="form-label">Order</label>
+                        <label for="add.order" class="form-label">Urutan</label>
                         <input type="number" name="order" id="add.order" class="form-control">
                         <div class="form-text">
                             Tidak boleh sama dalam satu group
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="mb-4">
-                            <label for="edit.icon-{{ $loop->iteration }}" class="form-label">Icon <span
+                            <label for="edit.icon-{{ $loop->iteration }}" class="form-label">Ikon <span
                                     style="font-size: 8pt">(optional)</span></label>
                             <input type="file" name="icon" id="edit.icon-{{ $loop->iteration }}"
                                 class="form-control">
@@ -150,7 +150,7 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="edit.description-{{ $loop->iteration }}" class="form-label">Description <span
+                            <label for="edit.description-{{ $loop->iteration }}" class="form-label">Deskripsi <span
                                     style="font-size: 8pt">(optional)</span></label>
                             <input type="text" name="description" id="edit.description-{{ $loop->iteration }}"
                                 class="form-control" value="{{ $question->description }}">
@@ -163,7 +163,7 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="edit.order-{{ $loop->iteration }}" class="form-label">Order</label>
+                            <label for="edit.order-{{ $loop->iteration }}" class="form-label">Urutan</label>
                             <input type="number" name="order" id="edit.order-{{ $loop->iteration }}"
                                 class="form-control" value="{{ $question->order }}">
                             <div class="form-text">
