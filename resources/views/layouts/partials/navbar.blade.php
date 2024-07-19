@@ -1,17 +1,17 @@
 @php
     $menus = [
         [
-            'label' => 'Dashboard',
+            'label' => 'Beranda',
             'route' => route('admin.dashboard'),
             'active' => Request::routeIs('admin.dashboard'),
         ],
         [
-            'label' => 'Skin Category',
+            'label' => 'Kategori Kulit',
             'route' => route('admin.category.index'),
             'active' => Request::routeIs('admin.category.*'),
         ],
         [
-            'label' => 'Dos & Donts',
+            'label' => 'Lakukan & Jangan',
             'route' => route('admin.dos-donts.index'),
             'active' => Request::routeIs('admin.dos-donts.*'),
         ],
@@ -21,7 +21,7 @@
             'active' => Request::routeIs('admin.question.*'),
         ],
         [
-            'label' => 'Article',
+            'label' => 'Artikel',
             'route' => route('admin.article.index'),
             'active' => Request::routeIs('admin.article.*'),
         ],

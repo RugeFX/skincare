@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('page_title', 'Edit Skin Category')
+@section('page_title', 'Ubah Kategori Kulit')
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h5 class="card-title">Edit Data</h5>
+            <h5 class="card-title">Ubah Data</h5>
         </div>
         <div class="card-body">
             <form action="{{ route('admin.category.update', $category->id) }}" method="POST">
@@ -13,7 +13,7 @@
                 @method('PUT')
                 <div class="row row-gap-3">
                     <div class="col-12">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nama</label>
                         <input type="text" name="name" id="name" class="form-control"
                             value="{{ $category->name }}">
                     </div>

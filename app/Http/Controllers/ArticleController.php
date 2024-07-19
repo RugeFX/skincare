@@ -95,6 +95,9 @@ class ArticleController extends Controller
         ]);
 
         if ($request->hasFile('thumbnail')) {
+            if ($article->thumbail) {
+                Storage::disk('public')->delete($article->thumbnail);
+            }
             $validated['thumbnail'] = $request->file('thumbnail')->store('article/thumbnail', 'public');
         }
 
@@ -118,9 +121,6 @@ class ArticleController extends Controller
 
         $article->update($validated);
 
-        if ($request->hasFile('thumbnail') && $article->thumbail) {
-            Storage::disk('public')->delete($article->thumbnail);
-        }
 
         return redirect()->route('admin.article.index')->with('success', 'Berhasil mengubah data article');
     }

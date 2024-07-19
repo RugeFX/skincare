@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', 'Ubah Article')
+@section('page_title', 'Ubah Artikel')
 
 @push('meta')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,11 +31,11 @@
                     <input type="file" name="thumbnail" id="thumbnail" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Judul</label>
                     <input type="text" name="title" id="title" class="form-control" value="{{ $article->title }}">
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label">Content</label>
+                    <label for="content" class="form-label">Konten</label>
                     <textarea name="content" id="content" rows="5" class="form-control">{{ $article->content }}</textarea>
                 </div>
                 <div class="d-flex justify-content-end mt-5">

@@ -37,8 +37,8 @@
                         @endforeach
                     </div>
                     <div class="card lg:col-span-2">
-                        <h5 class="card-title">Do's and Dont's</h5>
-                        <p>Do's</p>
+                        <h5 class="card-title">Lakukan dan Jangan Lakukan</h5>
+                        <p>Lakukan</p>
                         <ul>
                             @foreach ($dosDonts as $item)
                                 @if ($item->group == 'dos')
@@ -46,7 +46,7 @@
                                 @endif
                             @endforeach
                         </ul>
-                        <p class="mt-4">Don't's</p>
+                        <p class="mt-4">Jangan Lakukan</p>
                         <ul>
                             @foreach ($dosDonts as $item)
                                 @if ($item->group == 'donts')

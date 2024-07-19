@@ -12,11 +12,13 @@
                 <a href="{{ route('question') }}" class="btn rounded-full bg-light-coral text-white">Mulai</a>
             </div>
             <div class="text-center py-20">
-                <h3 class="text-4xl font-semibold mb-4">Lihat Artikel Kami</h3>
+                <a href="#articles">
+                    <h3 class="text-4xl font-semibold mb-4">Lihat Artikel Kami</h3>
+                </a>
                 <p class="text-gray-600">Jelajahi segudang pengetahuan dan tips untuk mendapatkan kulit yang sehat dan
                     bercahaya.</p>
 
-                <div @class([
+                <div id="articles" @class([
                     'mt-12',
                     'grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-stretch justify-center gap-6' =>
                         count($articles) > 0,

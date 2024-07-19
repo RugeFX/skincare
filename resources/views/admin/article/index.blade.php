@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', 'Article')
+@section('page_title', 'Artikel')
 
 @section('actions')
     <a href="{{ route('admin.article.create') }}" class="btn btn-primary btn-sm">Tambah</a>
@@ -13,9 +13,9 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Content</th>
-                            <th width="150">Actions</th>
+                            <th>Judul</th>
+                            <th>Konten</th>
+                            <th width="150">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

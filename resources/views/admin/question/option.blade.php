@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', 'List Pertanyaan Option')
+@section('page_title', 'List Pilihan Pertanyaan')
 
 @section('actions')
     <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary btn-sm">Tambah</button>
@@ -14,8 +14,8 @@
                     <thead>
                         <tr>
                             <th>Label</th>
-                            <th>Description</th>
-                            <th width="250">Actions</th>
+                            <th>Deskripsi</th>
+                            <th width="250">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,11 +59,11 @@
                         <input type="text" name="label" id="add.label" class="form-control">
                     </div>
                     <div class="mb-4">
-                        <label for="add.icon" class="form-label">Icon <span style="font-size: 8pt">(optional)</span></label>
+                        <label for="add.icon" class="form-label">Ikon <span style="font-size: 8pt">(optional)</span></label>
                         <input type="file" name="icon" id="add.icon" class="form-control">
                     </div>
                     <div class="mb-4">
-                        <label for="add.description" class="form-label">Description <span
+                        <label for="add.description" class="form-label">Deskripsi <span
                                 style="font-size: 8pt">(optional)</span></label>
                         <input type="text" name="description" id="add.description" class="form-control">
                     </div>
@@ -96,13 +96,13 @@
                                 value="{{ $option->label }}">
                         </div>
                         <div class="mb-4">
-                            <label for="edit.icon-{{ $loop->iteration }}" class="form-label">Icon <span
+                            <label for="edit.icon-{{ $loop->iteration }}" class="form-label">Ikon <span
                                     style="font-size: 8pt">(optional)</span></label>
                             <input type="file" name="icon" id="edit.icon-{{ $loop->iteration }}"
                                 class="form-control">
                         </div>
                         <div class="mb-4">
-                            <label for="edit.description-{{ $loop->iteration }}" class="form-label">Description <span
+                            <label for="edit.description-{{ $loop->iteration }}" class="form-label">Deskripsi <span
                                     style="font-size: 8pt">(optional)</span></label>
                             <input type="text" name="description" id="edit.description-{{ $loop->iteration }}"
                                 class="form-control" value="{{ $option->description }}">

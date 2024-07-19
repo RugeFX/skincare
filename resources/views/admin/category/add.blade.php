@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', 'Tambah Skin Category')
+@section('page_title', 'Tambah Kategori Kulit')
 
 @section('content')
     <div class="card">
@@ -12,7 +12,7 @@
                 @csrf
                 <div class="row row-gap-3">
                     <div class="col-12">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nama</label>
                         <input type="text" name="name" id="name" class="form-control">
                     </div>
                     <div class="col-md-6">

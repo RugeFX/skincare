@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', 'Skin Category')
+@section('page_title', 'Kategori Kulit ')
 
 @section('actions')
     <a href="{{ route('admin.category.create') }}" class="btn btn-primary btn-sm">Tambah</a>
@@ -13,12 +13,12 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Nama</th>
                             <th>Tipe</th>
                             <th>Penyebab</th>
                             <th>Karakteristik</th>
                             <th>Skincare</th>
-                            <th width="150">Actions</th>
+                            <th width="150">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

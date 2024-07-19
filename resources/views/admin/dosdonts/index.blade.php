@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', "Do's & Don't's")
+@section('page_title', 'Lakukan & Jangan Lakukan')
 
 @section('actions')
     <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary btn-sm">Tambah</button>
@@ -14,10 +14,10 @@
                     <thead>
                         <tr>
                             <th>Group</th>
-                            <th>Skin Condition</th>
-                            <th>Skin Dream</th>
-                            <th>Todo</th>
-                            <th width="150">Actions</th>
+                            <th>Kondisi Kulit</th>
+                            <th>Kulit Harapan</th>
+                            <th>Lakukan</th>
+                            <th width="150">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +65,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="add.sc" class="form-label">Skin Condition</label>
+                        <label for="add.sc" class="form-label">Kondisi Kulit</label>
                         <select name="skin_condition" id="add.sc" class="form-select">
                             @foreach ($skin_conditions as $item)
                                 <option value="{{ $item->label }}">{{ $item->label }}</option>
@@ -73,7 +73,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="add.sd" class="form-label">Skin Dream</label>
+                        <label for="add.sd" class="form-label">Kulit Harapan</label>
                         <select name="skin_dream" id="add.sd" class="form-select">
                             @foreach ($skin_dreams as $item)
                                 <option value="{{ $item->label }}">{{ $item->label }}</option>
@@ -81,7 +81,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="add.todo" class="form-label">To do</label>
+                        <label for="add.todo" class="form-label">Lakukan</label>
                         <input type="text" name="todo" id="add.todo" class="form-control">
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="edit.sc{{ $loop->iteration }}" class="form-label">Skin Condition</label>
+                            <label for="edit.sc{{ $loop->iteration }}" class="form-label">Kondisi Kulit</label>
                             <select name="skin_condition" id="edit.sc{{ $loop->iteration }}" class="form-select">
                                 @foreach ($skin_conditions as $sc)
                                     <option value="{{ $sc->label }}" @selected($item->skin_condition == $sc->label)>{{ $sc->label }}
@@ -122,7 +122,7 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="edit.sd{{ $loop->iteration }}" class="form-label">Skin Dream</label>
+                            <label for="edit.sd{{ $loop->iteration }}" class="form-label">Kulit Harapan</label>
                             <select name="skin_dream" id="edit.sd{{ $loop->iteration }}" class="form-select">
                                 @foreach ($skin_dreams as $sd)
                                     <option value="{{ $sd->label }}" @selected($item->skin_dream == $sd->label)>{{ $sd->label }}
@@ -131,7 +131,7 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="edit.todo{{ $loop->iteration }}" class="form-label">To do</label>
+                            <label for="edit.todo{{ $loop->iteration }}" class="form-label">Lakukan</label>
                             <input type="text" name="todo" id="edit.todo{{ $loop->iteration }}"
                                 class="form-control" value="{{ $item->todo }}">
                         </div>
