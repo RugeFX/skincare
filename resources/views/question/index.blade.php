@@ -6,7 +6,9 @@
         <div class="min-h-screen bg-linen">
             <div class="bg-white py-4 pt-8">
                 <div class="container flex justify-center">
-                    <h1 class="text-4xl font-black text-light-coral text-center">{{ config('app.name') }}</h1>
+                    <a href="/">
+                        <h1 class="text-4xl font-black text-light-coral text-center">{{ config('app.name') }}</h1>
+                    </a>
                 </div>
             </div>
             <x-progress step="{{ $step }}" />

@@ -3,11 +3,11 @@
 @section('content')
     <section class="bg-fixed bg-mesh bg-cover min-h-screen">
         <div class="container px-8">
-            <div class="h-[80vh] flex flex-col items-center justify-center gap-y-32">
-                <div class="flex flex-col gap-y-10">
-                    <h1 class="text-5xl font-black text-red-400 text-center mb-8">MySkin</h1>
-                    <h1 class="capitalize text-7xl text-light-coral text-center font-bold">Skin Test</h1>
-                    <p class="text-2xl font-medium">Cari tahu tipe jenis kulitmu</p>
+            <div class="h-[80vh] flex flex-col items-center justify-center gap-y-20">
+                <div class="flex flex-col gap-y-10 mt-16">
+                    <h1 class="text-7xl font-black text-red-400 text-center mb-8">MySkin</h1>
+                    <h1 class="capitalize text-5xl text-light-coral text-center font-bold">Skin Test</h1>
+                    <p class="text-2xl font-medium mt-6">Cari tahu tipe jenis kulitmu</p>
                 </div>
                 <a href="{{ route('question') }}" class="btn rounded-full bg-light-coral text-white">Mulai</a>
             </div>
