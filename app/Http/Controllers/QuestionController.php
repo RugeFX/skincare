@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Answer;
+use App\Models\Article;
 use App\Models\Category;
 use App\Models\DosDonts;
 use App\Models\Question;
@@ -123,5 +124,13 @@ class QuestionController extends Controller
     {
         $request->session()->flush();
         return redirect()->route('question');
+    }
+
+    public function admin()
+    {
+        $questions_count = Question::all()->count();
+        $responses_count = Answer::all()->count();
+        $articles_count = Article::all()->count();
+        return view('admin.dashboard', compact('questions_count', 'responses_count', 'articles_count'));
     }
 }

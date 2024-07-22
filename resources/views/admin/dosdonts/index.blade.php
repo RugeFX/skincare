@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('page_title', 'Lakukan & Jangan Lakukan')
+@section('page_title', 'Dos and Donts')
 
 @section('actions')
     <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary btn-sm">Tambah</button>
