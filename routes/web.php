@@ -24,9 +24,7 @@ Route::group([
     'prefix' => 'admin',
     'as' => 'admin.',
 ], function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/', [QuestionController::class, 'admin'])->name('dashboard');
 
     Route::resource('category', CategoryController::class)->except('show');
     Route::resource('dos-donts', DosDontsController::class)->only(['index', 'store', 'update', 'destroy']);

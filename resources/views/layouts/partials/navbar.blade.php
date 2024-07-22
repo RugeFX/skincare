@@ -11,7 +11,7 @@
             'active' => Request::routeIs('admin.category.*'),
         ],
         [
-            'label' => 'Lakukan & Jangan',
+            'label' => 'Dos & Donts',
             'route' => route('admin.dos-donts.index'),
             'active' => Request::routeIs('admin.dos-donts.*'),
         ],
